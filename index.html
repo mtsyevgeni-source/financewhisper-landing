@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinanceWhisper — Stock &amp; Crypto Alerts on Telegram</title>
+<meta name="description" content="A Telegram bot that watches prices for you and tells you the moment something worth knowing happens. Free tier included. No separate app to install.">
+<style>
+  :root {
+    --bg: #0b0f14;
+    --bg-card: #121821;
+    --border: #212b38;
+    --text: #e8edf4;
+    --text-dim: #93a1b3;
+    --accent: #4fa3ff;
+    --accent-dim: #2c6cc9;
+    --green: #4fd48a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { padding: 88px 0 64px; text-align: center; }
+  .hero .badge {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 14px;
+    margin-bottom: 24px;
+  }
+  h1 { font-size: 40px; line-height: 1.25; margin: 0 0 18px; letter-spacing: -0.02em; }
+  .hero p.sub { font-size: 18px; color: var(--text-dim); max-width: 560px; margin: 0 auto 34px; }
+
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #06121f;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  .cta:hover { background: #6bb3ff; }
+  .cta-note { font-size: 13px; color: var(--text-dim); margin-top: 12px; }
+
+  section { padding: 48px 0; border-top: 1px solid var(--border); }
+  section h2 { font-size: 22px; margin: 0 0 8px; }
+  section p.lede { color: var(--text-dim); margin: 0 0 28px; }
+
+  .story {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 30px;
+  }
+  .story p { margin: 0 0 16px; }
+  .story p:last-child { margin-bottom: 0; }
+  .story .sign { color: var(--text-dim); font-size: 14px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+  .feature {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .feature h3 { font-size: 15px; margin: 0 0 8px; color: var(--text); }
+  .feature p { font-size: 14px; color: var(--text-dim); margin: 0; }
+
+  table.pricing { width: 100%; border-collapse: collapse; }
+  table.pricing th, table.pricing td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+  }
+  table.pricing th { color: var(--text-dim); font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+  table.pricing td.check { color: var(--green); }
+
+  .invite {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .invite p { margin: 0; color: var(--text-dim); font-size: 15px; max-width: 420px; }
+
+  footer { padding: 40px 0 60px; color: var(--text-dim); font-size: 13px; }
+  footer a { color: var(--text-dim); }
+  .disclaimer {
+    font-size: 13px;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Runs entirely inside Telegram — nothing to install</span>
+    <h1>Stop checking prices.<br>Let the bot watch them for you.</h1>
+    <p class="sub">FinanceWhisper tracks the stocks, crypto, and forex you care about and
+      messages you the moment something worth knowing happens — a price target,
+      a real move, or genuinely significant news. Free tier included.</p>
+    <a class="cta" href="https://t.me/FinanceWhisper_bot" target="_blank" rel="noopener">Open in Telegram</a>
+    <div class="cta-note">Free to start. No credit card, no app download.</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap story">
+    <p>I'm a beginner investor myself. What got me into this whole world was a
+      simple thought: you should be able to follow the market without having
+      to dive deep into how complicated it actually is — one place to get
+      your alerts and instant access to the information that actually
+      matters.</p>
+    <p>I built this to sort that out for myself first. Only afterward did I
+      realize it could genuinely help other people trying to do the same
+      thing.</p>
+    <p class="sign">— built and run solo, with AI-assisted development</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What it does</h2>
+    <p class="lede">Talk to it in plain English, or use exact commands — both work the same way.</p>
+    <div class="grid">
+      <div class="feature">
+        <h3>Price &amp; percent alerts</h3>
+        <p>"Let me know when Tesla drops below $300" or "alert me if Apple moves 5%." Fires once, then it's done.</p>
+      </div>
+      <div class="feature">
+        <h3>Watchlist &amp; portfolio</h3>
+        <p>Track tickers with no alert condition, or log real holdings and see live gain/loss, cost basis included.</p>
+      </div>
+      <div class="feature">
+        <h3>Instant quotes &amp; market snapshot</h3>
+        <p>"What's Microsoft trading at?" or "how's the market doing?" — with a short, synthesized news briefing.</p>
+      </div>
+      <div class="feature">
+        <h3>Proactive news alerts</h3>
+        <p>A background check screens headlines on tickers you track and only messages you when something is
+          actually likely to move the stock — not every headline.</p>
+      </div>
+      <div class="feature">
+        <h3>Daily digest</h3>
+        <p>One message a day: market snapshot, watchlist, portfolio P&amp;L, and your active alert count.</p>
+      </div>
+      <div class="feature">
+        <h3>Crypto &amp; forex too</h3>
+        <p>Major coins and currency pairs work everywhere a stock ticker does — just say BTC, ETH, or the name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Free tier included, premium is cheap</h2>
+    <p class="lede">Paid via Telegram Stars — no separate account or card needed.</p>
+    <table class="pricing">
+      <tr><th></th><th>Free</th><th>Premium — 349 Stars / 30 days (~$4.50)</th></tr>
+      <tr><td>Price &amp; percent alerts</td><td>3 of each</td><td class="check">50 of each</td></tr>
+      <tr><td>Watchlist items</td><td>5</td><td class="check">30</td></tr>
+      <tr><td>Price checks</td><td>Every 15 min</td><td class="check">Every 1 min</td></tr>
+      <tr><td>Research-assistant questions</td><td>3 / day</td><td class="check">Unlimited</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap invite">
+    <p>Already using it? Invite a friend — the moment they start the bot
+      through your personal link, you both get 7 days of premium, free.
+      Send <code>/invite</code> in the bot to get your link.</p>
+    <a class="cta" href="https://t.me/FinanceWhisper_bot" target="_blank" rel="noopener" style="white-space:nowrap;">Open bot</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Questions, refunds, or found a bug? Message the bot with <code>/support</code>,
+      or reach out directly at <a href="mailto:mtsyevgeni@gmail.com">mtsyevgeni@gmail.com</a>.
+      Refund requests: <code>/refund_me</code> inside the bot, instant within 48 hours of a charge.</p>
+    <div class="disclaimer">
+      FinanceWhisper provides price alerts and market information — it is not
+      financial advice, and it makes no claims about trading performance or
+      returns. See <code>/terms</code> and <code>/privacy</code> inside the bot for full details.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
