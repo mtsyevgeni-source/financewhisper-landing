@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mtsyevgeni-source.github.io/financewhisper-landing/sitemap.xml
