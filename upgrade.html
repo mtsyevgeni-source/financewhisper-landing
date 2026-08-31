@@ -182,6 +182,18 @@
   if (!chatId) {
     document.getElementById('missing-chat-warning').style.display = 'block';
   }
+
+// Task #162: ?plan=yearly auto-selects the better-value annual price for
+// links coming from the bot's trial-expiry/win-back nudges, instead of
+// making the customer pick between two buttons themselves. Falls back to
+// the default two-button view for any other/no query param.
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('plan') === 'yearly') {
+    var yearlyBtn = document.getElementById('btn-yearly');
+    if (yearlyBtn) yearlyBtn.click();
+  }
+})();
 </script>
 
 </body>
